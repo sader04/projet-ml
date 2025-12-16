@@ -1,4 +1,3 @@
-!pip install ucimlrepo
 import os
 import pandas as pd
 import numpy as np
@@ -159,7 +158,7 @@ def plot_critical_pairs(X, y, save=True):
 
     #Torque vs Rotational speed (PWF)
     ax = axes[0, 1]
-    ax.scatter(X['Torque'], X['Rotational speed'], c=colors, alpha=0.6) s
+    ax.scatter(X['Torque'], X['Rotational speed'], c=colors, alpha=0.6) 
     rpm = np.linspace(X['Rotational speed'].min(), X['Rotational speed'].max(), 100) 
     for P in [3500, 9000]:
         torque_iso = P / (rpm * 2 * np.pi / 60)
