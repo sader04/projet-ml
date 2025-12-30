@@ -1,0 +1,28 @@
+#Environnement virtuel
+.venv/
+venv/
+env/
+
+#Fichiers Python temporaires
+__pycache__/
+*.py[cod]
+*$py.class
+
+#Données brutes 
+data/raw/
+*.tmp
+
+#Fichiers système
+.DS_Store
+Thumbs.db
+
+#Fichiers de l'IDE
+.vscode/
+.idea/
+
+#Fichiers de logs temporaires
+logs/
+
+
+#Fichiers temporaires
+tempCodeRunnerFile.py
