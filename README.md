@@ -225,5 +225,5 @@ Pour que `app.py` fonctionne, les fichiers suivants doivent exister :
 ---
 
 ## 📄 Licence
-Projet académique réalisé dans le cadre du cours d'Introduction au Machine Learning à l'Ecole Centrale Casablanca.  
+Projet académique réalisé dans le cadre du cours du Machine Learning à l'Ecole Centrale Casablanca.  
 Jeu de données : AI4I 2020 Predictive Maintenance Dataset (UCI Machine Learning Repository).
