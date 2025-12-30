@@ -1,5 +1,10 @@
 # 📊 Projet ML - Détection d’Anomalies par Autoencodeurs en Maintenance Prédictive
 
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange.svg)](https://tensorflow.org)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.x-red.svg)](https://streamlit.io)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 ## 📌 Résumé du projet
 Ce projet vise à mettre en œuvre et comparer différentes approches de détection d’anomalies dans un contexte de maintenance prédictive industrielle. L'accent est mis sur l'utilisation des **autoencodeurs** (réseaux de neurones non supervisés) pour apprendre les comportements normaux et détecter les déviations anormales dans les données de capteurs.
 
