@@ -8,8 +8,7 @@ from pathlib import Path
 print("GÉNÉRATION DES VISUALISATIONS POUR STREAMLIT")
 
 #Créer un dossier pour les visualisations
-os.makedirs("reports", exist_ok=True)
-
+os.makedirs('reports/figures', exist_ok=True)
 #Simuler/créer reconstruction_errors_distribution.png
 print("\n1. Création: reconstruction_errors_distribution.png")
 
@@ -58,7 +57,7 @@ axes[2].grid(alpha=0.3)
 
 plt.suptitle('Distribution des erreurs de reconstruction - Autoencodeur Dense', fontsize=14, fontweight='bold')
 plt.tight_layout()
-plt.savefig('reconstruction_errors_distribution.png', dpi=150, bbox_inches='tight')
+plt.savefig('reports/figures/reconstruction_errors_distribution.png', dpi=150, bbox_inches='tight')
 print("   ✅ reconstruction_errors_distribution.png sauvegardé")
 
 #2. Créer latent_space_pca_analysis.png
@@ -89,7 +88,7 @@ ax.legend(fontsize=11)
 ax.grid(True, alpha=0.3)
 
 plt.tight_layout()
-plt.savefig('latent_space_pca_analysis.png', dpi=150, bbox_inches='tight')
+plt.savefig('reports/figures/latent_space_pca_analysis.png', dpi=150, bbox_inches='tight')
 print("   ✅ latent_space_pca_analysis.png sauvegardé")
 
 #3. Créer cluster_error_distribution.png
@@ -114,7 +113,7 @@ ax.legend(fontsize=11)
 ax.grid(True, alpha=0.3)
 
 plt.tight_layout()
-plt.savefig('cluster_error_distribution.png', dpi=150, bbox_inches='tight')
+plt.savefig('reports/figures/cluster_error_distribution.png', dpi=150, bbox_inches='tight')
 print("   ✅ cluster_error_distribution.png sauvegardé")
 
 #4. Vérifier/Créer model_comparison_results.csv

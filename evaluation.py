@@ -1,7 +1,3 @@
-"""
-Module d'évaluation complet pour la détection d'anomalies.
-Aligné avec train_all_models.py.
-"""
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -27,9 +23,9 @@ def find_optimal_threshold(y_true, scores, metric='f2', min_recall=0.85):
 
     if metric == 'f1':
         beta = 1
-    elif metric == 'f2':  # Plus sensible au rappel
+    elif metric == 'f2':  #Plus sensible au rappel
         beta = 2
-    elif metric == 'f0.5':  # Plus sensible à la précision
+    elif metric == 'f0.5':  #Plus sensible à la précision
         beta = 0.5
     else:
         raise ValueError("metric doit être 'f1', 'f2' ou 'f0.5'")
@@ -39,19 +35,19 @@ def find_optimal_threshold(y_true, scores, metric='f2', min_recall=0.85):
     sorted_scores = scores[sorted_indices]
     sorted_y_true = y_true[sorted_indices]
     
-    best_threshold = sorted_scores[0] - 0.1  # Initialisation
+    best_threshold = sorted_scores[0] - 0.1  #Initialisation
     best_fbeta = 0
     best_y_pred = None
     
-    # Chercher le meilleur seuil
+    #Chercher le meilleur seuil
     for i in range(len(sorted_scores)):
         threshold = sorted_scores[i]
         y_pred = (scores > threshold).astype(int)
         
-        # Calculer recall
+        #Calculer recall
         recall_val = recall_score(y_true, y_pred, zero_division=0)
         
-        # Si recall < minimum requis, continuer
+        #Si recall < minimum requis, continuer
         if recall_val < min_recall:
             continue
         
@@ -174,12 +170,9 @@ def plot_confusion_matrices(y_true_list, y_pred_list, model_names, save_path=Non
 
 
 def plot_roc_pr_comparison(results_dict, y_true_dict, scores_dict, save_dir='.'):
-    #Tracer les courbes ROC et Precision-Recall pour comparaison.
-
-    #1. Courbes ROC
+    #Tracer la courbe ROC pour comparaison.
     plt.figure(figsize=(12, 5))
-    
-    plt.subplot(1, 2, 1)
+
     for name in results_dict.keys():
         if name in scores_dict and name in y_true_dict:
             y_true = y_true_dict[name]
@@ -194,35 +187,16 @@ def plot_roc_pr_comparison(results_dict, y_true_dict, scores_dict, save_dir='.')
     plt.plot([0, 1], [0, 1], 'k--', alpha=0.3, label='Aléatoire (AUC=0.5)')
     plt.xlabel("False Positive Rate", fontsize=11)
     plt.ylabel("True Positive Rate", fontsize=11)
-    plt.title("Courbes ROC - Comparaison", fontsize=13, fontweight='bold')
+    plt.title("Comparaison des courbes ROC – Tous les modèles", fontsize=13, fontweight='bold')
     plt.legend(loc='lower right', fontsize=9)
     plt.grid(alpha=0.3)
     plt.xlim([-0.02, 1.02])
     plt.ylim([-0.02, 1.02])
     
-    # 2. Courbes Precision-Recall
-    plt.subplot(1, 2, 2)
-    for name in results_dict.keys():
-        if name in scores_dict and name in y_true_dict:
-            y_true = y_true_dict[name]
-            scores = scores_dict[name]
-            precision, recall, _ = precision_recall_curve(y_true, scores)
-            auc_pr = results_dict[name]['AUC-PR']
-            
-            linestyle = '-' if 'AE' in name or 'autoencoder' in name.lower() else '--'
-            plt.plot(recall, precision, linestyle=linestyle, linewidth=2, 
-                    label=f"{name} (AUC={auc_pr:.3f})")
     
-    plt.xlabel("Recall", fontsize=11)
-    plt.ylabel("Precision", fontsize=11)
-    plt.title("Courbes Precision-Recall", fontsize=13, fontweight='bold')
-    plt.legend(loc='upper right', fontsize=9)
-    plt.grid(alpha=0.3)
-    plt.xlim([-0.02, 1.02])
-    plt.ylim([-0.02, 1.02])
     
     plt.tight_layout()
-    plt.savefig(f'{save_dir}/comparison_curves.png', dpi=150, bbox_inches='tight')
+    plt.savefig(f'{save_dir}/comparison_roc_curves.png', dpi=150, bbox_inches='tight')
     plt.show()
 
 

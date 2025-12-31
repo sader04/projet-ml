@@ -862,11 +862,11 @@ elif section == "🤖 Performance des modèles":
         st.markdown("---")
         st.markdown("### 📈 Visualisation des Performances")
         
-        if os.path.exists("comparison_roc_curves.png"):
+        if os.path.exists("reports/figures/comparison_roc_curves.png"):
             col1, col2 = st.columns(2)
             
             with col1:
-                st.image("comparison_roc_curves.png", 
+                st.image("reports/figures/comparison_roc_curves.png", 
                         caption="Courbes ROC - Tous les modèles",
                         width='stretch')
             
@@ -984,8 +984,8 @@ elif section == "📈 Visualisations":
             
             #Vérifier si les fichiers de clustering existent
             cluster_files = [
-                "latent_space_pca_analysis.png",
-                "cluster_error_distribution.png"
+                "reports/figures/latent_space_pca_analysis.png",
+                "reports/figures/cluster_error_distribution.png"
             ]
             
             files_exist = [f for f in cluster_files if os.path.exists(f)]
@@ -1009,10 +1009,10 @@ elif section == "📈 Visualisations":
             """)
             
             #Vérifier si le fichier d'erreurs existe
-            if os.path.exists("reconstruction_errors_distribution.png"):
+            if os.path.exists("reports/figures/reconstruction_errors_distribution.png"):
                 st.markdown("### 📈 Distribution des Erreurs de Reconstruction")
                 
-                st.image("reconstruction_errors_distribution.png",
+                st.image("reports/figures/reconstruction_errors_distribution.png",
                         caption="Distribution des erreurs MSE par classe",
                         width='stretch')
             else:

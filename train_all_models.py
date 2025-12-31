@@ -316,12 +316,12 @@ try:
     
     if len(valid_models) > 1:
         # Courbes ROC et PR
-        plot_roc_pr_comparison(valid_models, valid_y_true, valid_scores, save_dir='.')
+        plot_roc_pr_comparison(valid_models, valid_y_true, valid_scores, save_dir='reports/figures/')
         
         # Distribution des erreurs pour Dense AE
         plot_reconstruction_error_distribution(
             mse_test_dense, y_test, threshold_dense,
-            "Dense Autoencoder", save_path='reconstruction_errors_dense.png'
+            "Dense Autoencoder", save_path='reports/figures/reconstruction_errors_dense.png'
         )
         
         print("✅ Visualisations générées")
@@ -346,7 +346,7 @@ print("  ├── model_parameters.pkl")
 print("  └── scaler.pkl")
 print("\n📊 FICHIERS DE RÉSULTATS :")
 print("├── model_comparison_results.csv")
-print("├── comparison_curves.png")
+print("├── comparison_roc_curves.png")
 print("└── reconstruction_errors_dense.png")
 
 
