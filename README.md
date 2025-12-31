@@ -9,7 +9,6 @@
 ## 📌 Résumé du projet
 Ce projet vise à mettre en œuvre et comparer différentes approches de détection d’anomalies dans un contexte de maintenance prédictive industrielle. L'accent est mis sur l'utilisation des **autoencodeurs** (réseaux de neurones non supervisés) pour apprendre les comportements normaux et détecter les déviations anormales dans les données de capteurs.
 
-
 ---
 
 ## 🎯 Objectifs principaux
