@@ -155,7 +155,7 @@ python evaluation.py
 ```
 *Génère :*
 - *`model_comparison_results.csv`*
-- *Courbes ROC et PR*
+- *Courbes ROC*
 - *Métriques de performance*
 
 #### Étape 5 : Génération des visualisations
@@ -167,7 +167,6 @@ python visualisation.py
 - *`reconstruction_errors_dense.png`*
 - *`latent_space_pca_analysis.png`*
 - *`cluster_error_distribution.png`*
-- *`comparison_pr_curves.png`*
 
 #### Étape 6 : Lancement du dashboard Streamlit
 ```bash
@@ -178,7 +177,7 @@ streamlit run app.py
 - *`evaluation.py` pour les métriques*
 - *`visualisation.py` pour les graphiques*
 - *Les modèles entraînés dans `/models/`*
-- *Les visualisations générées dans `/` et dans `reports/figures`*
+- *Les visualisations générées dans `reports/figures`*
 
 ---
 
