@@ -106,7 +106,7 @@ projet-ml/
 
 ### 1. Cloner le dépôt
 ```bash
-git clone [<url-du-repo>](https://github.com/sader04/projet-ml.git)
+git clone https://github.com/sader04/projet-ml.git
 cd PROJET-ML
 ```
 
