@@ -42,9 +42,8 @@ projet-ml/
 ├── requirements.txt               # Dépendances Python
 ├── README.md                      # Ce fichier
 │
-├── model_comparison_results.csv   # Résultats comparatifs
-│
-└── *.png                          # Visualisations générées
+└──  model_comparison_results.csv   # Résultats comparatifs
+
 ```
 
 ---
