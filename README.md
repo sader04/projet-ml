@@ -130,13 +130,11 @@ pip install -r requirements.txt
 ```bash
 python data_preprocessing.py
 ```
-*Crée : `data_prepared.csv`, `targets.csv`*
 
 #### Étape 2 : Chargement et préparation des datasets
 ```bash
 python data_loader.py
 ```
-*Importe les données prétraitées et prépare les splits train/test*
 
 #### Étape 3 : Entraînement de tous les modèles
 ```bash
