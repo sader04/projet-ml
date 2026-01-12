@@ -12,7 +12,7 @@ os.makedirs('reports/figures', exist_ok=True)
 #Simuler/créer reconstruction_errors_distribution.png
 print("\n1. Création: reconstruction_errors_distribution.png")
 
-#Données simulées (ou charger depuis tes modèles)
+#Données simulées
 np.random.seed(42)
 n_normal = 950
 n_anomaly = 50
